@@ -108,8 +108,7 @@ class FaceEnhancement(object):
     use_sr = False
     use_cuda = False
     sr_model = 'rrdb_realesrnet_psnr'
-    indir = "."
-    outdir = "."
+
     
     
     faceenhancer = FaceEnhancement(size=size, model=model, use_sr=use_sr, sr_model=sr_model, channel_multiplier=channel_multiplier, narrow=narrow, key=key, device='cuda' if args.use_cuda else 'cpu')
@@ -118,13 +117,11 @@ class FaceEnhancement(object):
     
   
 
-def inference(img):
+def inference(file):
     im = cv2.imread(file, cv2.IMREAD_COLOR) 
     img, orig_faces, enhanced_faces = faceenhancer.process(im)
     
     return enhanced_faces[0]
-    os.system("python face_enhancement.py --model GPEN-BFR-512 --size 512 --channel_multiplier 2 --narrow 1 --use_sr --indir examples/imgs --outdir examples/outs-BFR2")
-    return "examples/outs-BFR2/"
         
 title = "GFP-GAN"
 description = "Gradio demo for GFP-GAN: Towards Real-World Blind Face Restoration with Generative Facial Prior. To use it, simply upload your image, or click one of the examples to load them. Read more at the links below. Please click submit only once"
@@ -132,7 +129,7 @@ article = "<p style='text-align: center'><a href='https://arxiv.org/abs/2101.040
 gr.Interface(
     inference, 
     [gr.inputs.Image(type="filepath", label="Input")], 
-    gr.outputs.Image(type="pil", label="Output"),
+    gr.outputs.Image(type="numpy", label="Output"),
     title=title,
     description=description,
     article=article,
