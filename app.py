@@ -117,8 +117,7 @@ faceenhancer = FaceEnhancement(size=size, model=model, use_sr=use_sr, sr_model=s
 def inference(file):
     im = cv2.imread(file, cv2.IMREAD_COLOR) 
     img, orig_faces, enhanced_faces = faceenhancer.process(im)
-    
-    return enhanced_faces[0]
+    return enhanced_faces[0][:,:,::-1]
         
 title = "GFP-GAN"
 description = "Gradio demo for GFP-GAN: Towards Real-World Blind Face Restoration with Generative Facial Prior. To use it, simply upload your image, or click one of the examples to load them. Read more at the links below. Please click submit only once"
