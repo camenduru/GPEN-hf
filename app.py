@@ -100,24 +100,20 @@ class FaceEnhancement(object):
         
   
     
-    model = "GPEN-BFR-512"
-    
-    key = None
-    size = 512
-    channel_multiplier = 2
-    narrow = 1
-    use_sr = False
-    use_cuda = False
-    sr_model = 'rrdb_realesrnet_psnr'
+model = "GPEN-BFR-512"
+
+key = None
+size = 512
+channel_multiplier = 2
+narrow = 1
+use_sr = False
+use_cuda = False
+sr_model = 'rrdb_realesrnet_psnr'
 
     
     
-    faceenhancer = FaceEnhancement(size=size, model=model, use_sr=use_sr, sr_model=sr_model, channel_multiplier=channel_multiplier, narrow=narrow, key=key, device='cuda' if args.use_cuda else 'cpu')
+faceenhancer = FaceEnhancement(size=size, model=model, use_sr=use_sr, sr_model=sr_model, channel_multiplier=channel_multiplier, narrow=narrow, key=key, device='cuda' if args.use_cuda else 'cpu')
     
-    
-    
-  
-
 def inference(file):
     im = cv2.imread(file, cv2.IMREAD_COLOR) 
     img, orig_faces, enhanced_faces = faceenhancer.process(im)
