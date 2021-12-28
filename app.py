@@ -112,7 +112,7 @@ sr_model = 'rrdb_realesrnet_psnr'
 
     
     
-faceenhancer = FaceEnhancement(size=size, model=model, use_sr=use_sr, sr_model=sr_model, channel_multiplier=channel_multiplier, narrow=narrow, key=key, device='cuda' if args.use_cuda else 'cpu')
+faceenhancer = FaceEnhancement(size=size, model=model, use_sr=use_sr, sr_model=sr_model, channel_multiplier=channel_multiplier, narrow=narrow, key=key, device='cpu')
     
 def inference(file):
     im = cv2.imread(file, cv2.IMREAD_COLOR) 
