@@ -5,8 +5,6 @@ os.system("wget https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/mo
 os.system("wget https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/models/rrdb_realesrnet_psnr.pth -P ./weights/")
 
 import gradio as gr
-torch.hub.download_url_to_file('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Abraham_Lincoln_O-77_matte_collodion_print.jpg/1024px-Abraham_Lincoln_O-77_matte_collodion_print.jpg', 'lincoln.jpg')
-torch.hub.download_url_to_file('https://upload.wikimedia.org/wikipedia/commons/5/50/Albert_Einstein_%28Nobel%29.png', 'einstein.png')
 
 '''
 @paper: GAN Prior Embedded Network for Blind Face Restoration in the Wild (CVPR2021)
@@ -25,6 +23,9 @@ from face_parse.face_parsing import FaceParse
 from face_model.face_gan import FaceGAN
 from sr_model.real_esrnet import RealESRNet
 from align_faces import warp_and_crop_face, get_reference_facial_points
+import torch
+torch.hub.download_url_to_file('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Abraham_Lincoln_O-77_matte_collodion_print.jpg/1024px-Abraham_Lincoln_O-77_matte_collodion_print.jpg', 'lincoln.jpg')
+torch.hub.download_url_to_file('https://upload.wikimedia.org/wikipedia/commons/5/50/Albert_Einstein_%28Nobel%29.png', 'einstein.png')
 
 class FaceEnhancement(object):
     def __init__(self, base_dir='./', size=512, model=None, use_sr=True, sr_model=None, channel_multiplier=2, narrow=1, key=None, device='cuda'):
