@@ -24,7 +24,7 @@ from face_model.face_gan import FaceGAN
 from sr_model.real_esrnet import RealESRNet
 from align_faces import warp_and_crop_face, get_reference_facial_points
 import torch
-torch.hub.download_url_to_file('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Abraham_Lincoln_O-77_matte_collodion_print.jpg/1024px-Abraham_Lincoln_O-77_matte_collodion_print.jpg', 'lincoln.jpg')
+torch.hub.download_url_to_file('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/800px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg', 'mona.jpg')
 torch.hub.download_url_to_file('https://upload.wikimedia.org/wikipedia/commons/5/50/Albert_Einstein_%28Nobel%29.png', 'einstein.png')
 
 class FaceEnhancement(object):
@@ -119,9 +119,12 @@ def inference(file):
     img, orig_faces, enhanced_faces = faceenhancer.process(im)
     return enhanced_faces[0][:,:,::-1]
         
-title = "GFP-GAN"
-description = "Gradio demo for GFP-GAN: Towards Real-World Blind Face Restoration with Generative Facial Prior. To use it, simply upload your image, or click one of the examples to load them. Read more at the links below. Please click submit only once"
-article = "<p style='text-align: center'><a href='https://arxiv.org/abs/2101.04061'>Towards Real-World Blind Face Restoration with Generative Facial Prior</a> | <a href='https://github.com/TencentARC/GFPGAN'>Github Repo</a></p><center><img src='https://visitor-badge.glitch.me/badge?page_id=akhaliq_GFPGAN' alt='visitor badge'></center>"
+title = "GPEN"
+description = "Gradio demo for GAN Prior Embedded Network for Blind Face Restoration in the Wild. To use it, simply upload your image, or click one of the examples to load them. Read more at the links below."
+
+article = "<p style='text-align: center'><a href='https://arxiv.org/abs/2105.06070'>GAN Prior Embedded Network for Blind Face Restoration in the Wild</a> | <a href='https://github.com/yangxy/GPEN'>Github Repo</a></p><center><img src='https://visitor-badge.glitch.me/badge?page_id=akhaliq_GPEN' alt='visitor badge'></center>"
+
+
 gr.Interface(
     inference, 
     [gr.inputs.Image(type="filepath", label="Input")], 
@@ -130,7 +133,7 @@ gr.Interface(
     description=description,
     article=article,
     examples=[
-    ['lincoln.jpg'],
+    ['mona.jpg'],
     ['einstein.png']
     ],
     enable_queue=True
