@@ -122,7 +122,7 @@ def inference(file):
 title = "GPEN"
 description = "Gradio demo for GAN Prior Embedded Network for Blind Face Restoration in the Wild. To use it, simply upload your image, or click one of the examples to load them. Read more at the links below."
 
-article = "<p style='text-align: center'><a href='https://arxiv.org/abs/2105.06070'>GAN Prior Embedded Network for Blind Face Restoration in the Wild</a> | <a href='https://github.com/yangxy/GPEN'>Github Repo</a></p><center><img src='https://visitor-badge.glitch.me/badge?page_id=akhaliq_GPEN' alt='visitor badge'></center>"
+article = "<p style='text-align: center'><a href='https://arxiv.org/abs/2105.06070' target='_blank'>GAN Prior Embedded Network for Blind Face Restoration in the Wild</a> | <a href='https://github.com/yangxy/GPEN' target='_blank'>Github Repo</a></p><center><img src='https://visitor-badge.glitch.me/badge?page_id=akhaliq_GPEN' alt='visitor badge'></center>"
 
 
 gr.Interface(
