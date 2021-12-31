@@ -133,8 +133,6 @@ gr.Interface(
     description=description,
     article=article,
     examples=[
-    ['mona.jpg'],
-    ['einstein.png']
+    ['sample.jpg']
     ],
-    enable_queue=True
-    ).launch(debug=True)
+    ).launch(enable_queue=True,cache_examples=False)
