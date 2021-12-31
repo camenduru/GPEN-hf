@@ -1,4 +1,5 @@
 import os
+os.system("pip install gradio==2.5.3")
 os.system("wget https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/models/RetinaFace-R50.pth -P ./weights/")
 os.system("wget https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/models/GPEN-BFR-512.pth -P ./weights/")
 os.system("wget https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/models/ParseNet-latest.pth -P ./weights/")
@@ -133,6 +134,7 @@ gr.Interface(
     description=description,
     article=article,
     examples=[
-    ['sample.jpg']
+    ['sample.png']
     ],
-    ).launch(enable_queue=True,cache_examples=False)
+    enable_queue=True
+    ).launch()
