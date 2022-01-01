@@ -5,6 +5,7 @@ os.system("wget https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/mo
 os.system("wget https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/models/ParseNet-latest.pth -P ./weights/")
 os.system("wget https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/models/rrdb_realesrnet_psnr.pth -P ./weights/")
 
+
 import gradio as gr
 
 '''
