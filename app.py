@@ -1,10 +1,8 @@
 import os
 
-os.system('wget "https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/models/RetinaFace-R50.pth?OSSAccessKeyId=LTAI4G6bfnyW4TA4wFUXTYBe&Expires=1961116085&Signature=GlUNW6%2B8FxvxWmE9jKIZYOOciKQ%3D" -O weights/RetinaFace-R50.pth')
-os.system('wget "https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/models/GPEN-BFR-512.pth?OSSAccessKeyId=LTAI4G6bfnyW4TA4wFUXTYBe&Expires=1961116208&Signature=hBgvVvKVSNGeXqT8glG%2Bd2t2OKc%3D" -O weights/GPEN-BFR-512.pth')
-os.system('wget "https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/models/GPEN-BFR-256.pth?OSSAccessKeyId=LTAI4G6bfnyW4TA4wFUXTYBe&Expires=1961116259&Signature=kMGJLSHqnvzzzqwtjUVBgngzX2s%3D" -O weights/GPEN-BFR-256.pth')
-os.system('wget "https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/models/rrdb_realesrnet_psnr.pth?OSSAccessKeyId=LTAI4G6bfnyW4TA4wFUXTYBe&Expires=1961116389&Signature=JZIBJOtfE5ePUyETslpDQsYwHpU%3D" -O weights/rrdb_realesrnet_psnr.pth')
-os.system('wget "https://public-vigen-video.oss-cn-shanghai.aliyuncs.com/robin/models/ParseNet-latest.pth?OSSAccessKeyId=LTAI4G6bfnyW4TA4wFUXTYBe&Expires=1961116134&Signature=bnMwU1JogmNbARto6G%2B7iaJQCHs%3D" -O weights/ParseNet-latest.pth')
+os.system('wget https://huggingface.co/akhaliq/RetinaFace-R50/resolve/main/RetinaFace-R50.pth')
+os.system('wget https://huggingface.co/akhaliq/GPEN-BFR-512/resolve/main/GPEN-BFR-512.pth')
+os.system('wget https://huggingface.co/akhaliq/realesrnet_x2/resolve/main/realesrnet_x2.pth')
 import gradio as gr
 
 '''
@@ -109,7 +107,7 @@ channel_multiplier = 2
 narrow = 1
 use_sr = False
 use_cuda = False
-sr_model = 'rrdb_realesrnet_psnr'
+sr_model = 'realesrnet_x2'
 
     
     
