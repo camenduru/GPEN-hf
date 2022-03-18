@@ -1,8 +1,8 @@
 import os
 
-os.system('wget https://huggingface.co/akhaliq/RetinaFace-R50/resolve/main/RetinaFace-R50.pth')
-os.system('wget https://huggingface.co/akhaliq/GPEN-BFR-512/resolve/main/GPEN-BFR-512.pth')
-os.system('wget https://huggingface.co/akhaliq/realesrnet_x2/resolve/main/realesrnet_x2.pth')
+os.system('wget https://huggingface.co/akhaliq/RetinaFace-R50/resolve/main/RetinaFace-R50.pth -O weights/RetinaFace-R50.pth')
+os.system('wget https://huggingface.co/akhaliq/GPEN-BFR-512/resolve/main/GPEN-BFR-512.pth -O weights/GPEN-BFR-512.pth')
+os.system('wget https://huggingface.co/akhaliq/realesrnet_x2/resolve/main/realesrnet_x2.pth -O weights/realesrnet_x2.pth')
 import gradio as gr
 
 '''
